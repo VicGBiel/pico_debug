@@ -3,6 +3,12 @@
 #include "hardware/pio.h"
 #include "lib/DHT22/dht.h"
 
+// UART
+#include "hardware/uart.h"
+#define UART_TX_PIN 0
+#define UART_RX_PIN 1
+#define BAUD_RATE 115200
+
 // Pinos do LED RGB da BitDogLab
 #define LED_G 11
 #define LED_B 12
@@ -13,7 +19,8 @@
 
 int main() {
     stdio_init_all();
-
+    stdio_uart_init_full(uart0, BAUD_RATE, UART_TX_PIN, UART_RX_PIN);
+    
     // Configura LEDs da BitDogLab
     gpio_init(LED_R); gpio_set_dir(LED_R, GPIO_OUT);
     gpio_init(LED_G); gpio_set_dir(LED_G, GPIO_OUT);
