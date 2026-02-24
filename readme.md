@@ -25,10 +25,10 @@ O ambiente de depuração exige a conexão de três hardwares principais:
 ### 3. Pi Pico (Debugger)
 As conexões entre a Pico Probe e a Pico W (Target) devem seguir:
 * **GND -> GND**
-* **SWDIO -> SWDIO**
-* **SWCLK -> SWCLK**
-* **UART RX -> GP16** (Target TX)
-* **UART TX -> GP17** (Target RX)
+* **GP2 -> SWCLK**
+* **GP3 -> SWDIO**
+* **GP4 -> GP0** (Target RX)
+* **GP5 -> GP1** (Target TX)
 
 ## Como Depurar
 
